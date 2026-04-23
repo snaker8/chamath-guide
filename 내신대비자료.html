@@ -1,176 +1,178 @@
-import React, { useState, useEffect } from 'react';
-import { 
-  BookOpen, 
-  CheckCircle2, 
-  Info, 
-  Calendar, 
-  GraduationCap, 
-  ChevronRight,
-  BookMarked,
-  BellRing
-} from 'lucide-react';
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>엄궁차수학 스마트 학원 - 중간고사 대비 안내</title>
+    
+    <!-- Tailwind CSS (CDN을 통해 깃허브에서도 바로 적용됨) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide 아이콘 라이브러리 -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="min-h-screen bg-[#F8FAFC] font-sans text-slate-800">
 
-const App = () => {
-  const [currentDate, setCurrentDate] = useState('');
-
-  useEffect(() => {
-    const today = new Date();
-    const formattedDate = `${today.getFullYear()}년 ${today.getMonth() + 1}월 ${today.getDate()}일`;
-    setCurrentDate(formattedDate);
-  }, []);
-
-  return (
-    <div className="min-h-screen bg-[#F8FAFC] font-sans text-slate-800">
-      {/* Top Navigation / Header */}
-      <header className="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-slate-100">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-          <div className="flex items-center gap-2.5">
-            <GraduationCap className="text-slate-900 w-7 h-7" />
-            <h1 className="font-extrabold text-xl tracking-tight text-slate-900">
-              엄궁차수학 <span className="text-blue-600 font-black">SMART</span>
-            </h1>
-          </div>
-          <div className="text-sm font-medium text-slate-500 hidden sm:block">
-            {currentDate}
-          </div>
+    <!-- Top Navigation / Header -->
+    <header class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-slate-100">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-2.5">
+                <i data-lucide="graduation-cap" class="text-slate-900 w-7 h-7"></i>
+                <h1 class="font-extrabold text-xl tracking-tight text-slate-900">
+                    엄궁차수학 <span class="text-blue-600 font-black">SMART</span>
+                </h1>
+            </div>
+            <div id="current-date" class="text-sm font-medium text-slate-500 hidden sm:block">
+                <!-- 자바스크립트로 날짜가 들어가는 자리 -->
+            </div>
         </div>
-      </header>
+    </header>
 
-      <main className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10">
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10">
         
-        {/* Welcome Banner - Modern & Clean */}
-        <section className="bg-white rounded-[2rem] p-8 sm:p-12 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100/60 relative overflow-hidden">
-          <div className="absolute top-[-50%] right-[-20%] w-[500px] h-[500px] bg-gradient-to-br from-blue-100/40 to-indigo-50/40 rounded-full mix-blend-multiply filter blur-[80px] pointer-events-none"></div>
-          <div className="relative z-10">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-50 border border-slate-200 text-slate-700 text-xs font-bold tracking-wide mb-6">
-              <BellRing className="w-4 h-4 text-blue-600" />
-              <span>중간고사 대비 공지</span>
+        <!-- Welcome Banner - Modern & Clean -->
+        <section class="bg-white rounded-[2rem] p-8 sm:p-12 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100/60 relative overflow-hidden">
+            <div class="absolute top-[-50%] right-[-20%] w-[500px] h-[500px] bg-gradient-to-br from-blue-100/40 to-indigo-50/40 rounded-full mix-blend-multiply filter blur-[80px] pointer-events-none"></div>
+            <div class="relative z-10">
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-50 border border-slate-200 text-slate-700 text-xs font-bold tracking-wide mb-6">
+                    <i data-lucide="bell-ring" class="w-4 h-4 text-blue-600"></i>
+                    <span>중간고사 대비 공지</span>
+                </div>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-6 tracking-tight text-slate-900 leading-[1.25]">
+                    1학기 중간고사 완벽 대비<br />맞춤형 교재 배포 안내
+                </h2>
+                <p class="text-slate-500 text-lg max-w-2xl leading-relaxed font-medium">
+                    학부모님 안녕하십니까. 우리 아이들의 성공적인 시험을 위해 엄궁차수학에서 심혈을 기울여 준비한 <strong class="text-slate-800 font-bold">학교별 맞춤 기출 및 유사 문제집</strong>이 배포되었습니다.
+                </p>
             </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-6 tracking-tight text-slate-900 leading-[1.25]">
-              1학기 중간고사 완벽 대비<br />맞춤형 교재 배포 안내
-            </h2>
-            <p className="text-slate-500 text-lg max-w-2xl leading-relaxed font-medium">
-              학부모님 안녕하십니까. 우리 아이들의 성공적인 시험을 위해 엄궁차수학에서 심혈을 기울여 준비한 <strong className="text-slate-800 font-bold">학교별 맞춤 기출 및 유사 문제집</strong>이 배포되었습니다.
-            </p>
-          </div>
         </section>
 
-        {/* Status Dashboard - Bento Box Style */}
-        <section className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="bg-white p-6 sm:p-8 rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100/60 flex items-center gap-5 transition-transform hover:-translate-y-1 duration-300">
-            <div className="bg-blue-50 p-4 rounded-2xl text-blue-600">
-              <CheckCircle2 className="w-7 h-7" />
+        <!-- Status Dashboard - Bento Box Style -->
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-white p-6 sm:p-8 rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100/60 flex items-center gap-5 transition-transform hover:-translate-y-1 duration-300">
+                <div class="bg-blue-50 p-4 rounded-2xl text-blue-600">
+                    <i data-lucide="check-circle" class="w-7 h-7"></i>
+                </div>
+                <div>
+                    <h3 class="font-bold text-slate-900 text-lg">수학 대비 교재</h3>
+                    <p class="text-slate-500 text-sm mt-1 font-medium">전 학생 배부 완료 (수업 시간 활용)</p>
+                </div>
             </div>
-            <div>
-              <h3 className="font-bold text-slate-900 text-lg">수학 대비 교재</h3>
-              <p className="text-slate-500 text-sm mt-1 font-medium">전 학생 배부 완료 (수업 시간 활용)</p>
+            <div class="bg-white p-6 sm:p-8 rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100/60 flex items-center gap-5 transition-transform hover:-translate-y-1 duration-300">
+                <div class="bg-emerald-50 p-4 rounded-2xl text-emerald-600">
+                    <i data-lucide="info" class="w-7 h-7"></i>
+                </div>
+                <div>
+                    <h3 class="font-bold text-slate-900 text-lg">기타 암기과목 교재</h3>
+                    <p class="text-slate-500 text-sm mt-1 font-medium">희망 신청자 대상 한정 배부 진행 중</p>
+                </div>
             </div>
-          </div>
-          <div className="bg-white p-6 sm:p-8 rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100/60 flex items-center gap-5 transition-transform hover:-translate-y-1 duration-300">
-            <div className="bg-emerald-50 p-4 rounded-2xl text-emerald-600">
-              <Info className="w-7 h-7" />
-            </div>
-            <div>
-              <h3 className="font-bold text-slate-900 text-lg">기타 암기과목 교재</h3>
-              <p className="text-slate-500 text-sm mt-1 font-medium">희망 신청자 대상 한정 배부 진행 중</p>
-            </div>
-          </div>
         </section>
 
-        {/* Main Textbooks Section */}
-        <div className="pt-4">
-          <h3 className="text-xl font-bold text-slate-900 px-2 flex items-center gap-2 mb-8 tracking-tight">
-            <BookOpen className="text-slate-400 w-6 h-6" />
-            교재 상세 안내
-          </h3>
+        <!-- Main Textbooks Section -->
+        <div class="pt-4">
+            <h3 class="text-xl font-bold text-slate-900 px-2 flex items-center gap-2 mb-8 tracking-tight">
+                <i data-lucide="book-open" class="text-slate-400 w-6 h-6"></i>
+                교재 상세 안내
+            </h3>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            
-            {/* Card 1: Math */}
-            <div className="bg-white rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100/60 overflow-hidden group flex flex-col hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300">
-              <div className="h-80 w-full relative overflow-hidden">
-                <img 
-                  src="1.jpg" 
-                  alt="수학 기출 최후의 수단 교재" 
-                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out" 
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              </div>
-              <div className="p-8 flex-1 flex flex-col">
-                <div className="uppercase tracking-widest text-[11px] font-bold text-blue-600 mb-3">필수 정규 교재</div>
-                <h4 className="text-2xl font-extrabold text-slate-900 mb-4 tracking-tight">학교별 기출 + 유사 문제집</h4>
-                <p className="text-slate-500 leading-relaxed mb-8 flex-1 text-sm font-medium">
-                  수학 성적 향상의 핵심! 인근 학교들의 역대 출제 경향을 완벽하게 분석하여 제작된 <strong className="text-slate-700">'기출! 최후의 수단!!'</strong> 교재입니다. 실전과 동일한 유형의 문제들로 실수를 줄이고 고득점을 노립니다.
-                </p>
-                <ul className="space-y-3 bg-slate-50 rounded-2xl p-5">
-                  <li className="flex items-start gap-3 text-sm text-slate-700 font-semibold">
-                    <CheckCircle2 className="w-5 h-5 text-blue-500 shrink-0" />
-                    학교별 출제 트렌드 완벽 반영
-                  </li>
-                  <li className="flex items-start gap-3 text-sm text-slate-700 font-semibold">
-                    <CheckCircle2 className="w-5 h-5 text-blue-500 shrink-0" />
-                    취약점 보완을 위한 쌍둥이 유사 문제 수록
-                  </li>
-                </ul>
-              </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                
+                <!-- Card 1: Math -->
+                <div class="bg-white rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100/60 overflow-hidden group flex flex-col hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300">
+                    <div class="h-80 w-full relative overflow-hidden">
+                        <img 
+                            src="1.jpg" 
+                            alt="수학 기출 최후의 수단 교재" 
+                            class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out" 
+                        />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    </div>
+                    <div class="p-8 flex-1 flex flex-col">
+                        <div class="uppercase tracking-widest text-[11px] font-bold text-blue-600 mb-3">필수 정규 교재</div>
+                        <h4 class="text-2xl font-extrabold text-slate-900 mb-4 tracking-tight">학교별 기출 + 유사 문제집</h4>
+                        <p class="text-slate-500 leading-relaxed mb-8 flex-1 text-sm font-medium">
+                            수학 성적 향상의 핵심! 인근 학교들의 역대 출제 경향을 완벽하게 분석하여 제작된 <strong class="text-slate-700">'기출! 최후의 수단!!'</strong> 교재입니다. 실전과 동일한 유형의 문제들로 실수를 줄이고 고득점을 노립니다.
+                        </p>
+                        <ul class="space-y-3 bg-slate-50 rounded-2xl p-5">
+                            <li class="flex items-start gap-3 text-sm text-slate-700 font-semibold">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-blue-500 shrink-0"></i>
+                                학교별 출제 트렌드 완벽 반영
+                            </li>
+                            <li class="flex items-start gap-3 text-sm text-slate-700 font-semibold">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-blue-500 shrink-0"></i>
+                                취약점 보완을 위한 쌍둥이 유사 문제 수록
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Card 2: Other Subjects -->
+                <div class="bg-white rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100/60 overflow-hidden group flex flex-col hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300">
+                    <div class="h-80 w-full relative overflow-hidden flex">
+                        <div class="w-1/2 h-full border-r border-slate-200/50 overflow-hidden">
+                            <img 
+                                src="2.jpg" 
+                                alt="학장중 기타과목 교재" 
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out origin-right" 
+                            />
+                        </div>
+                        <div class="w-1/2 h-full overflow-hidden">
+                            <img 
+                                src="3.jpg" 
+                                alt="엄궁중 기타과목 교재" 
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out origin-left" 
+                            />
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+                    </div>
+                    <div class="p-8 flex-1 flex flex-col">
+                        <div class="flex justify-between items-center mb-3">
+                            <div class="uppercase tracking-widest text-[11px] font-bold text-emerald-600">선택 희망 교재</div>
+                            <span class="bg-emerald-50 text-emerald-600 text-[11px] px-2.5 py-1 rounded-full font-bold tracking-wide">신청자 한정</span>
+                        </div>
+                        <h4 class="text-2xl font-extrabold text-slate-900 mb-4 tracking-tight">시험대비 족보 (암기과목)</h4>
+                        <p class="text-slate-500 leading-relaxed mb-8 flex-1 text-sm font-medium">
+                            수학뿐만 아니라 국어, 과학, 사회, 역사 등 주요 암기 과목의 성적 관리도 중요합니다. 학장중, 엄궁중 등 <strong class="text-slate-700">학교별 교과서에 맞춘 핵심 요약 및 기출 족보 교재</strong>를 감성적인 표지와 함께 준비했습니다.
+                        </p>
+                        <ul class="space-y-3 bg-slate-50 rounded-2xl p-5">
+                            <li class="flex items-start gap-3 text-sm text-slate-700 font-semibold">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-emerald-500 shrink-0"></i>
+                                국/과/사/역 핵심 요약 및 기출 문제 수록
+                            </li>
+                            <li class="flex items-start gap-3 text-sm text-slate-700 font-semibold">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-emerald-500 shrink-0"></i>
+                                학습 의욕을 높이는 감성 디자인 표지
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
             </div>
-
-            {/* Card 2: Other Subjects */}
-            <div className="bg-white rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100/60 overflow-hidden group flex flex-col hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300">
-              <div className="h-80 w-full relative overflow-hidden flex">
-                <div className="w-1/2 h-full border-r border-slate-200/50 overflow-hidden">
-                  <img 
-                    src="2.jpg" 
-                    alt="학장중 기타과목 교재" 
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out origin-right" 
-                  />
-                </div>
-                <div className="w-1/2 h-full overflow-hidden">
-                  <img 
-                    src="3.jpg" 
-                    alt="엄궁중 기타과목 교재" 
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out origin-left" 
-                  />
-                </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-              </div>
-              <div className="p-8 flex-1 flex flex-col">
-                <div className="flex justify-between items-center mb-3">
-                  <div className="uppercase tracking-widest text-[11px] font-bold text-emerald-600">선택 희망 교재</div>
-                  <span className="bg-emerald-50 text-emerald-600 text-[11px] px-2.5 py-1 rounded-full font-bold tracking-wide">신청자 한정</span>
-                </div>
-                <h4 className="text-2xl font-extrabold text-slate-900 mb-4 tracking-tight">시험대비 족보 (암기과목)</h4>
-                <p className="text-slate-500 leading-relaxed mb-8 flex-1 text-sm font-medium">
-                  수학뿐만 아니라 국어, 과학, 사회, 역사 등 주요 암기 과목의 성적 관리도 중요합니다. 학장중, 엄궁중 등 <strong className="text-slate-700">학교별 교과서에 맞춘 핵심 요약 및 기출 족보 교재</strong>를 감성적인 표지와 함께 준비했습니다.
-                </p>
-                <ul className="space-y-3 bg-slate-50 rounded-2xl p-5">
-                  <li className="flex items-start gap-3 text-sm text-slate-700 font-semibold">
-                    <CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0" />
-                    국/과/사/역 핵심 요약 및 기출 문제 수록
-                  </li>
-                  <li className="flex items-start gap-3 text-sm text-slate-700 font-semibold">
-                    <CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0" />
-                    학습 의욕을 높이는 감성 디자인 표지
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-          </div>
         </div>
 
-      </main>
+    </main>
 
-      {/* Footer */}
-      <footer className="border-t border-slate-200 mt-12 py-8 bg-white">
-        <div className="max-w-5xl mx-auto px-4 text-center text-slate-500 text-sm">
-          <p className="font-bold text-slate-700 mb-2">엄궁차수학 스마트 학원</p>
-          <p>학생들의 빛나는 내일을 위해 항상 최선을 다해 지도하겠습니다.</p>
-          <p className="mt-4 text-xs text-slate-400">© 2026 Eomgung Cha Math. All rights reserved.</p>
+    <!-- Footer -->
+    <footer class="border-t border-slate-200 mt-12 py-8 bg-white">
+        <div class="max-w-5xl mx-auto px-4 text-center text-slate-500 text-sm">
+            <p class="font-bold text-slate-700 mb-2">엄궁차수학 스마트 학원</p>
+            <p>학생들의 빛나는 내일을 위해 항상 최선을 다해 지도하겠습니다.</p>
+            <p class="mt-4 text-xs text-slate-400">© 2026 Eomgung Cha Math. All rights reserved.</p>
         </div>
-      </footer>
-    </div>
-  );
-};
+    </footer>
 
-export default App;
+    <!-- 스크립트: 아이콘 로드 및 오늘 날짜 입력 -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // 아이콘 렌더링
+            lucide.createIcons();
+
+            // 오늘 날짜 계산해서 넣기
+            const today = new Date();
+            const formattedDate = `${today.getFullYear()}년 ${today.getMonth() + 1}월 ${today.getDate()}일`;
+            document.getElementById('current-date').innerText = formattedDate;
+        });
+    </script>
+</body>
+</html>
