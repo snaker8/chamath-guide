@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>엄궁 차수학 | 동백전 결제 안내</title>
+<meta property="og:title" content="엄궁 차수학 | 동백전 결제 안내">
+<meta property="og:description" content="동백전 QR 결제 후 영수증 제출을 부탁드립니다.">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box;}
+  :root{
+    --navy:#1a2744;--navy-mid:#243556;
+    --gold:#b89a5a;--gold-soft:#c9ad6e;--gold-pale:#e8d9b0;
+    --cream:#f7f4ee;--cream-dark:#e5dfd3;--white:#ffffff;
+    --txt2:#4a5167;--txt3:#7c8196;
+  }
+  body{font-family:'Noto Sans KR',-apple-system,BlinkMacSystemFont,sans-serif;background:#f0ece4;color:var(--navy);line-height:1.65;-webkit-font-smoothing:antialiased;max-width:480px;margin:0 auto;overflow-x:hidden;}
+  .hero{background:var(--navy);color:var(--white);padding:48px 28px 40px;text-align:center;position:relative;overflow:hidden;}
+  .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 600px 400px at 80% 20%,rgba(184,154,90,.08) 0%,transparent 60%),radial-gradient(ellipse 500px 500px at 10% 80%,rgba(184,154,90,.05) 0%,transparent 60%);}
+  .hero-inner{position:relative;z-index:1;}
+  .hero-badge{display:inline-block;font-size:11px;font-weight:600;letter-spacing:3px;color:var(--gold-soft);border:1px solid rgba(184,154,90,.35);padding:6px 18px;border-radius:2px;margin-bottom:18px;}
+  .hero h1{font-size:22px;font-weight:800;line-height:1.45;margin-bottom:6px;letter-spacing:-.3px;}
+  .hero-sub{font-size:14px;font-weight:600;color:var(--gold-pale);margin-bottom:14px;}
+  .hero-desc{font-size:13px;color:rgba(255,255,255,.6);line-height:1.8;max-width:340px;margin:0 auto;font-weight:300;}
+  .hero-line{width:32px;height:1px;background:var(--gold);margin:16px auto 0;opacity:.4;}
+  .content{padding:20px 16px 32px;}
+  .card{background:var(--white);border-radius:14px;padding:26px 22px;margin-bottom:12px;box-shadow:0 1px 4px rgba(0,0,0,.04);}
+  .label{font-size:10px;font-weight:700;color:var(--gold);letter-spacing:2px;margin-bottom:10px;display:block;}
+  .card h2{font-size:17px;font-weight:800;color:var(--navy);margin-bottom:14px;line-height:1.45;letter-spacing:-.3px;}
+  .card p{font-size:13px;color:var(--txt2);line-height:1.8;}
+  .divider{display:flex;align-items:center;gap:14px;margin:10px 4px;}
+  .divider::before,.divider::after{content:'';flex:1;height:1px;background:var(--cream-dark);}
+  .divider span{font-size:10px;font-weight:700;color:var(--gold);letter-spacing:2.5px;white-space:nowrap;}
+  .inset{background:var(--cream);border-radius:10px;padding:14px 16px;margin-top:14px;border-left:2px solid var(--gold);}
+  .inset p{font-size:12.5px;color:var(--txt2);line-height:1.75;}
+  .inset b{color:var(--navy);}
+  .step-block{background:var(--cream);border-radius:10px;padding:16px;margin-top:10px;}
+  .step-head{display:flex;align-items:center;gap:10px;margin-bottom:6px;}
+  .step-tag{width:24px;height:24px;border-radius:50%;background:var(--navy);color:var(--white);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;flex-shrink:0;}
+  .step-tag.gold-tag{background:var(--gold);}
+  .step-head span{font-size:13.5px;font-weight:700;color:var(--navy);}
+  .step-block p{font-size:12px;color:var(--txt2);line-height:1.8;padding-left:34px;}
+  .feat-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:4px;}
+  .feat-box{background:var(--cream);border-radius:10px;padding:20px 14px 16px;text-align:center;}
+  .feat-icon{width:38px;height:38px;border-radius:50%;background:var(--navy);margin:0 auto 10px;display:flex;align-items:center;justify-content:center;}
+  .feat-icon svg{width:17px;height:17px;fill:none;stroke:var(--white);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
+  .feat-box h4{font-size:13px;font-weight:700;color:var(--navy);margin-bottom:4px;}
+  .feat-box p{font-size:11px;color:var(--txt3);line-height:1.6;}
+  .pay{background:var(--navy);border-radius:14px;padding:28px 22px;color:var(--white);margin-bottom:12px;position:relative;overflow:hidden;}
+  .pay::before{content:'';position:absolute;top:-50px;right:-50px;width:160px;height:160px;border-radius:50%;background:rgba(184,154,90,.08);}
+  .pay-inner{position:relative;z-index:1;}
+  .pay h2{font-size:16px;font-weight:800;color:var(--white);margin-bottom:4px;text-align:center;}
+  .pay-sub{font-size:12px;color:rgba(255,255,255,.45);text-align:center;margin-bottom:20px;font-weight:300;}
+  .pay-table{background:rgba(255,255,255,.07);border-radius:10px;padding:4px 16px;}
+  .pay-row{display:flex;justify-content:space-between;align-items:center;padding:11px 0;gap:12px;}
+  .pay-row+.pay-row{border-top:1px solid rgba(255,255,255,.07);}
+  .pay-key{font-size:11.5px;color:rgba(255,255,255,.42);white-space:nowrap;}
+  .pay-val{font-size:12.5px;font-weight:600;color:var(--white);text-align:right;}
+  .pay-val.ex{color:var(--gold-pale);}
+  .copy-btn{display:block;width:100%;background:var(--gold);color:var(--navy);border:none;border-radius:10px;padding:13px 0;font-size:13px;font-weight:700;cursor:pointer;margin-top:18px;font-family:inherit;letter-spacing:.3px;}
+  .copy-btn:active{opacity:.8;}
+  .foot-note{background:var(--white);border-radius:14px;padding:20px 22px;margin-bottom:12px;text-align:center;box-shadow:0 1px 4px rgba(0,0,0,.04);}
+  .foot-note p{font-size:12px;color:var(--txt3);line-height:1.8;}
+  .foot-note b{color:var(--navy);font-weight:700;}
+  .bottom{background:var(--navy);color:rgba(255,255,255,.4);text-align:center;padding:22px 20px;font-size:10.5px;line-height:1.7;}
+  .bottom strong{color:var(--white);font-weight:600;font-size:11.5px;}
+  .toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--navy);color:var(--white);padding:12px 26px;border-radius:10px;font-size:12.5px;font-weight:600;box-shadow:0 10px 30px rgba(0,0,0,.25);transition:transform .3s cubic-bezier(.22,1,.36,1);z-index:999;white-space:nowrap;}
+  .toast.show{transform:translateX(-50%) translateY(0);}
+</style>
+</head>
+<body>
+<div class="hero"><div class="hero-inner">
+  <div class="hero-badge">엄궁 차수학</div>
+  <h1>동백전 QR 결제 후<br>영수증 제출 안내</h1>
+  <p class="hero-sub">정확한 수납 확인을 위해 협조 부탁드립니다</p>
+  <p class="hero-desc">학부모님, 안녕하십니까. 동백전 QR 결제 시 학원에서 확인이 어려운 부분이 있어 아래와 같이 안내드립니다.</p>
+  <div class="hero-line"></div>
+</div></div>
+
+<div class="content">
+  <div class="divider"><span>안내 사항</span></div>
+  <div class="card">
+    <span class="label">NOTICE</span>
+    <h2>결제만으로는 학생 확인이 어렵습니다</h2>
+    <p>동백전 QR로 결제하시면 학원에는 결제 금액만 확인되고, 어느 학생의 수강료인지는 표시되지 않습니다.</p>
+    <div class="inset"><p>영수증을 보내주시지 않으면 결제 여부와 날짜를 확인하기 어려워 <b>수납 처리가 늦어지거나 미납으로 안내될 수 있습니다.</b></p></div>
+  </div>
+
+  <div class="divider"><span>제출 방법</span></div>
+  <div class="card">
+    <span class="label">HOW TO</span>
+    <h2>결제 후 이렇게 보내주세요</h2>
+    <div class="step-block">
+      <div class="step-head"><div class="step-tag">1</div><span>동백전 QR 결제</span></div>
+      <p>학원에 비치된 QR 코드로 결제해 주세요.</p>
+    </div>
+    <div class="step-block">
+      <div class="step-head"><div class="step-tag">2</div><span>결제 완료 화면 캡처</span></div>
+      <p>결제 직후 화면, 또는 동백전 앱 이용내역 화면을 캡처해 주셔도 됩니다.</p>
+    </div>
+    <div class="step-block">
+      <div class="step-head"><div class="step-tag gold-tag">3</div><span>학원으로 전송</span></div>
+      <p>캡처 사진과 함께 학생 이름과 결제 날짜를 적어 학원으로 보내주세요.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <span class="label">CHECK</span>
+    <h2>꼭 함께 적어주세요</h2>
+    <div class="feat-grid">
+      <div class="feat-box">
+        <div class="feat-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
+        <h4>학생 이름</h4>
+        <p>형제·자매는 모두 기재</p>
+      </div>
+      <div class="feat-box">
+        <div class="feat-icon"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></div>
+        <h4>결제 날짜</h4>
+        <p>예) 11월 11일</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="pay"><div class="pay-inner">
+    <h2>보내실 문자 예시</h2>
+    <p class="pay-sub">영수증 캡처와 함께 보내주세요</p>
+    <div class="pay-table">
+      <div class="pay-row"><span class="pay-key">내용</span><span class="pay-val">동백전 결제 완료</span></div>
+      <div class="pay-row"><span class="pay-key">학생명</span><span class="pay-val ex">홍길동</span></div>
+      <div class="pay-row"><span class="pay-key">결제일</span><span class="pay-val ex">11월 11일</span></div>
+      <div class="pay-row"><span class="pay-key">첨부</span><span class="pay-val">영수증 캡처</span></div>
+    </div>
+    <button class="copy-btn" onclick="copyMsg()">문구 복사하기</button>
+  </div></div>
+
+  <div class="foot-note"><p>번거로우시더라도 <b>결제 후 꼭 한 번</b> 보내주시면<br>정확하게 확인하고 관리하겠습니다.<br>항상 협조해 주셔서 감사합니다.</p></div>
+</div>
+
+<div class="bottom"><strong>엄궁 차수학</strong><br>완벽한 내신 관리의 시작</div>
+<div class="toast" id="toast">문구가 복사되었습니다</div>
+
+<script>
+var MSG='[동백전 결제 완료]\n학생명: \n결제일: ';
+function copyMsg(){if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(MSG).then(show).catch(function(){fb(MSG)});}else{fb(MSG);}}
+function fb(t){var a=document.createElement('textarea');a.value=t;a.style.cssText='position:fixed;opacity:0';document.body.appendChild(a);a.select();try{document.execCommand('copy');show();}catch(e){}document.body.removeChild(a);}
+function show(){var t=document.getElementById('toast');t.classList.add('show');setTimeout(function(){t.classList.remove('show');},2000);}
+</script>
+</body>
+</html>
